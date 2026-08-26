@@ -1,0 +1,547 @@
+/* Ultimate XOX — premium dark theme (Chess.com / Lichess inspired) */
+
+.root {
+    -fx-font-family: "Segoe UI", "SF Pro Display", system-ui, sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #0b0e11;
+}
+
+/* ── Typography ── */
+
+.label-display {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6fc;
+}
+
+.label-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6fc;
+}
+
+.label-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #8b949e;
+}
+
+.label-caption {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6e7681;
+}
+
+.label-status {
+    -fx-font-size: 15px;
+    -fx-text-fill: #c9d1d9;
+}
+
+.label-accent {
+    -fx-text-fill: #10b981;
+}
+
+.label-player-x {
+    -fx-text-fill: #58a6ff;
+    -fx-font-weight: bold;
+}
+
+.label-player-o {
+    -fx-text-fill: #f0b429;
+    -fx-font-weight: bold;
+}
+
+/* ── Buttons ── */
+
+.btn-primary {
+    -fx-background-color: #10b981;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 14;
+    -fx-padding: 14 28 14 28;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.18), 12, 0, 0, 2);
+}
+
+.btn-primary:hover {
+    -fx-background-color: #059669;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.35), 16, 0, 0, 3);
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #047857;
+}
+
+.btn-secondary {
+    -fx-background-color: #161b22;
+    -fx-text-fill: #f0f6fc;
+    -fx-font-size: 15px;
+    -fx-font-weight: normal;
+    -fx-background-radius: 14;
+    -fx-border-color: #2d333b;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-padding: 14 28 14 28;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #1c2330;
+    -fx-border-color: #10b981;
+}
+
+.btn-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8b949e;
+    -fx-font-size: 14px;
+    -fx-background-radius: 14;
+    -fx-padding: 10 16 10 16;
+    -fx-cursor: hand;
+}
+
+.btn-ghost:hover {
+    -fx-text-fill: #f0f6fc;
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+}
+
+.btn-back {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8b949e;
+    -fx-font-size: 14px;
+    -fx-background-radius: 12;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+}
+
+.btn-back:hover {
+    -fx-text-fill: #10b981;
+    -fx-background-color: rgba(16, 185, 129, 0.08);
+}
+
+/* ── Cards & panels ── */
+
+.card {
+    -fx-background-color: #161b22;
+    -fx-background-radius: 16;
+    -fx-border-color: #2d333b;
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.45), 20, 0, 0, 4);
+}
+
+.card-selectable {
+    -fx-background-color: #161b22;
+    -fx-background-radius: 16;
+    -fx-border-color: #2d333b;
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-padding: 18;
+    -fx-cursor: hand;
+}
+
+.card-selectable:hover {
+    -fx-background-color: #1c2330;
+    -fx-border-color: #484f58;
+}
+
+.card-selected {
+    -fx-background-color: rgba(16, 185, 129, 0.1);
+    -fx-border-color: #10b981;
+    -fx-border-width: 2;
+}
+
+/* ── Ultimate Tic-Tac-Toe Board ── */
+
+.meta-board-grid {
+    -fx-background-color: #0b0e11;
+    -fx-padding: 8;
+}
+
+.small-board-grid {
+    -fx-background-color: #0d1117;
+    -fx-background-radius: 8;
+    -fx-border-color: #2d333b;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 4;
+}
+
+.meta-board-button {
+    -fx-background-color: #161b22;
+    -fx-background-radius: 6;
+    -fx-border-color: #2d333b;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #8b949e;
+}
+
+.meta-board-button.meta-x {
+    -fx-background-color: rgba(88, 166, 255, 0.2);
+    -fx-border-color: #58a6ff;
+    -fx-text-fill: #58a6ff;
+}
+
+.meta-board-button.meta-o {
+    -fx-background-color: rgba(240, 180, 41, 0.2);
+    -fx-border-color: #f0b429;
+    -fx-text-fill: #f0b429;
+}
+
+.meta-board-button.meta-draw {
+    -fx-background-color: rgba(139, 148, 158, 0.2);
+    -fx-border-color: #8b949e;
+    -fx-text-fill: #8b949e;
+}
+
+.cell-button {
+    -fx-background-color: #161b22;
+    -fx-background-radius: 6;
+    -fx-border-color: #2d333b;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-min-width: 48;
+    -fx-min-height: 48;
+    -fx-pref-width: 48;
+    -fx-pref-height: 48;
+}
+
+.cell-button:hover {
+    -fx-background-color: #1c2330;
+    -fx-border-color: rgba(16, 185, 129, 0.5);
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.15), 8, 0, 0, 0);
+}
+
+.cell-button:disabled {
+    -fx-opacity: 1.0;
+    -fx-cursor: default;
+}
+
+.cell-button.cell-legal {
+    -fx-background-color: #0f1a15;
+    -fx-border-color: #10b981;
+    -fx-border-width: 2;
+}
+
+.cell-button.cell-last-move {
+    -fx-effect: dropshadow(gaussian, rgba(240, 180, 41, 0.5), 12, 0, 0, 0);
+}
+
+.cell-mark {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.cell-mark-x {
+    -fx-text-fill: #58a6ff;
+}
+
+.cell-mark-o {
+    -fx-text-fill: #f0b429;
+}
+
+/* Legacy single board (for compatibility) */
+
+.board-grid {
+    -fx-background-color: #0b0e11;
+    -fx-padding: 8;
+}
+
+.board-grid .cell-button {
+    -fx-font-size: 36px;
+    -fx-min-width: 96;
+    -fx-min-height: 96;
+    -fx-pref-width: 96;
+    -fx-pref-height: 96;
+}
+
+/* ── Player panels (chess-style side bars) ── */
+
+.player-panel {
+    -fx-background-color: #161b22;
+    -fx-background-radius: 14;
+    -fx-border-color: #2d333b;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-padding: 12 16 12 16;
+}
+
+.player-panel-active {
+    -fx-border-color: #10b981;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(16, 185, 129, 0.2), 10, 0, 0, 0);
+}
+
+/* ── Stats ── */
+
+.stat-value {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6fc;
+}
+
+.stat-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #8b949e;
+}
+
+/* ── Badges ── */
+
+.badge {
+    -fx-background-color: rgba(16, 185, 129, 0.15);
+    -fx-text-fill: #10b981;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 4 10 4 10;
+}
+
+/* ── Splash ── */
+
+.splash-root {
+    -fx-background-color: #0b0e11;
+}
+
+.splash-accent-line {
+    -fx-background-color: #10b981;
+    -fx-pref-height: 3;
+    -fx-max-width: 80;
+}
+
+.splash-progress .percentage {
+    -fx-fill: #10b981;
+}
+
+/* ── Result overlay ── */
+
+.result-overlay {
+    -fx-background-color: rgba(11, 14, 17, 0.88);
+}
+
+.result-card {
+    -fx-background-color: #161b22;
+    -fx-background-radius: 20;
+    -fx-border-color: #2d333b;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 32;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 30, 0, 0, 8);
+}
+
+.result-win {
+    -fx-text-fill: #10b981;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.result-loss {
+    -fx-text-fill: #f85149;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.result-draw {
+    -fx-text-fill: #8b949e;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+/* ── Scroll & combo ── */
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.combo-box {
+    -fx-background-color: #161b22;
+    -fx-border-color: #2d333b;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #f0f6fc;
+    -fx-background-color: #161b22;
+}
+
+/* ── Analysis panel ── */
+
+.analysis-panel {
+    -fx-background-color: rgba(22, 27, 34, 0.95);
+    -fx-background-radius: 14;
+    -fx-border-color: #2d333b;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-padding: 10 12 12 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 12, 0, 0, 2);
+}
+
+/* ── Theme modes ── */
+
+.theme-dark {
+    -fx-background-color: #0b0e11;
+}
+
+.theme-light {
+    -fx-background-color: #edf3fb;
+}
+
+.theme-system {
+    -fx-background-color: #0b0e11;
+}
+
+.theme-light .label-display,
+.theme-light .label-title,
+.theme-light .label-status,
+.theme-light .label-player-x,
+.theme-light .label-player-o,
+.theme-light .stat-value {
+    -fx-text-fill: #111827;
+}
+
+.theme-light .label-subtitle,
+.theme-light .label-caption,
+.theme-light .stat-label {
+    -fx-text-fill: #5b6b7e;
+}
+
+.theme-light .card,
+.theme-light .card-selectable,
+.theme-light .player-panel,
+.theme-light .btn-secondary,
+.theme-light .result-card,
+.theme-light .settings-card {
+    -fx-background-color: #f8fbff;
+    -fx-border-color: #d7e2ee;
+    -fx-text-fill: #111827;
+}
+
+.theme-light .btn-primary {
+    -fx-background-color: #0ea5e9;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(14, 165, 233, 0.25), 14, 0, 0, 2);
+}
+
+.theme-light .btn-primary:hover {
+    -fx-background-color: #0284c7;
+}
+
+.theme-light .btn-secondary:hover,
+.theme-light .card-selectable:hover {
+    -fx-background-color: #edf5ff;
+    -fx-border-color: #0ea5e9;
+}
+
+.theme-light .cell-button {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d6dee8;
+    -fx-text-fill: #111827;
+}
+
+.theme-light .cell-button:hover {
+    -fx-background-color: #f3f9ff;
+    -fx-border-color: rgba(14, 165, 233, 0.5);
+}
+
+.theme-light .badge {
+    -fx-background-color: rgba(14, 165, 233, 0.12);
+    -fx-text-fill: #0369a1;
+}
+
+.theme-light .splash-root {
+    -fx-background-color: #edf3fb;
+}
+
+/* ── Board themes ── */
+
+.board-theme-classic .cell-button {
+    -fx-background-color: #161b22;
+    -fx-border-color: #2d333b;
+}
+
+.board-theme-neon .cell-button {
+    -fx-background-color: #101826;
+    -fx-border-color: #1dd3b0;
+    -fx-text-fill: #d1fff8;
+}
+
+.board-theme-forest .cell-button {
+    -fx-background-color: #13281a;
+    -fx-border-color: #2d6a45;
+    -fx-text-fill: #e3ffe9;
+}
+
+.board-theme-sunset .cell-button {
+    -fx-background-color: #2a1d1b;
+    -fx-border-color: #d97706;
+    -fx-text-fill: #fff1da;
+}
+
+.board-theme-neon .badge,
+.board-theme-neon .btn-primary {
+    -fx-effect: dropshadow(gaussian, rgba(29, 211, 176, 0.35), 16, 0, 0, 2);
+}
+
+.board-theme-forest .badge {
+    -fx-background-color: rgba(34, 197, 94, 0.18);
+    -fx-text-fill: #b4f0c5;
+}
+
+.board-theme-sunset .badge {
+    -fx-background-color: rgba(249, 115, 22, 0.18);
+    -fx-text-fill: #ffd29d;
+}
+
+/* -- V1 gameplay highlight styles -- */
+.cell-playable {
+    -fx-border-color: #10b981;
+    -fx-border-width: 2;
+    -fx-border-radius: 4;
+}
+.cell-last-move {
+    -fx-border-color: #f0b429;
+    -fx-border-width: 2;
+    -fx-border-radius: 4;
+}
+.cell-hint {
+    -fx-border-color: #58a6ff;
+    -fx-border-width: 3;
+    -fx-border-radius: 4;
+}
+
+/* Marks must stay readable even when their cell is disabled
+   (filled cells are never clickable, so they sit in :disabled state,
+   where JavaFX would otherwise wash the label out). */
+.cell-button {
+    -fx-text-fill: #f0f6fc;
+}
+
+.meta-board-button.meta-x,
+.meta-board-button:disabled.meta-x {
+    -fx-text-fill: #58a6ff;
+    -fx-font-weight: bold;
+}
+.meta-board-button.meta-o,
+.meta-board-button:disabled.meta-o {
+    -fx-text-fill: #f0b429;
+    -fx-font-weight: bold;
+}
+.meta-board-button.meta-draw,
+.meta-board-button:disabled.meta-draw {
+    -fx-text-fill: #8b949e;
+    -fx-font-weight: bold;
+}
+
+.ai-spinner { -fx-progress-color: #10b981; }
+.stat-label { -fx-font-size: 11px; -fx-text-fill: #8b949e; }

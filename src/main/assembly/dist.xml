@@ -1,0 +1,62 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+    <id>dist</id>
+    <formats>
+        <format>zip</format>
+        <format>dir</format>
+    </formats>
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <baseDirectory>UltimateXOX-${project.version}</baseDirectory>
+
+    <fileSets>
+        <!-- jlink runtime image -->
+        <fileSet>
+            <directory>${project.build.directory}/image</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+
+        <!-- Application JAR -->
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>app</outputDirectory>
+            <includes>
+                <include>ultimate-xox-${project.version}.jar</include>
+            </includes>
+        </fileSet>
+
+        <!-- Launch scripts -->
+        <fileSet>
+            <directory>src/main/scripts</directory>
+            <outputDirectory>/</outputDirectory>
+            <fileMode>0755</fileMode>
+            <includes>
+                <include>*.sh</include>
+                <include>*.bat</include>
+            </includes>
+        </fileSet>
+
+        <!-- Models directory -->
+        <fileSet>
+            <directory>${project.build.outputDirectory}/models</directory>
+            <outputDirectory>models</outputDirectory>
+            <fileMode>0644</fileMode>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+
+        <!-- README -->
+        <fileSet>
+            <directory>${project.basedir}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>README.md</include>
+                <include>LICENSE</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

@@ -1,0 +1,26 @@
+node_modules/
+dist/
+.vite/
+.DS_Store
+*.log
+
+# Java / Maven
+**/target/
+**/build/
+**/.gradle/
+**/out/
+**/*.class
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Native app artifacts
+apps/android/.gradle/
+apps/android/app/build/
+apps/android/build/
+apps/android/local.properties
+
+# OS
+Thumbs.db
